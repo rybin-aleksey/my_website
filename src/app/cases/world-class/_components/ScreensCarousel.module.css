@@ -1,0 +1,34 @@
+.carousel {
+  overflow-x: auto;
+  border-radius: var(--radius-xl);
+  background: var(--bg-secondary);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  display: flex;
+  gap: 72px;
+  width: max-content;
+  padding: 64px;
+}
+
+.item {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    border-radius: var(--radius-md);
+  }
+
+  .track {
+    gap: 24px;
+    padding: 32px 24px;
+  }
+}

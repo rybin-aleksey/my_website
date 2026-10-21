@@ -1,0 +1,168 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 72px var(--gutter);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: -0.4px;
+}
+
+.subtitle {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--tp-secondary);
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.12px;
+}
+
+.mobileBreak {
+  display: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 420px;
+  padding: 48px;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--bg-secondary);
+}
+
+.icon {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  width: 68px;
+  color: var(--icon-accent);
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: -0.96px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.12px;
+}
+
+.description {
+  color: var(--tp-secondary);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media (min-width: 1260px) {
+  .section {
+    gap: 64px;
+  }
+
+  .card {
+    min-height: 400px;
+    padding: 40px;
+  }
+
+  .icon {
+    width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .header {
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+  }
+
+  .mobileBreak {
+    display: inline;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.04px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card {
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 28px;
+    border-radius: var(--radius-md);
+  }
+
+  .icon {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.4px;
+  }
+
+  .body {
+    gap: 16px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.04px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

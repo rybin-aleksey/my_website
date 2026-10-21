@@ -1,0 +1,68 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.04px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.sizeL {
+  padding: 12px 24px;
+}
+
+.sizeM {
+  padding: 8px 16px;
+}
+
+/* L на планшете и десктопе, M на мобильных (навигация) */
+.sizeResponsive {
+  padding: 12px 24px;
+}
+
+/* У primary в макете правый отступ 20px — место под иконку */
+.primary.sizeL,
+.primary.sizeResponsive {
+  padding-right: 20px;
+}
+
+@media (max-width: 767px) {
+  .sizeResponsive,
+  .primary.sizeResponsive {
+    padding: 8px 16px;
+  }
+}
+
+.primary {
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.primary:hover {
+  background: var(--button-primary-bg-hover);
+}
+
+.primary:active {
+  background: var(--button-primary-bg-active);
+}
+
+.secondary {
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+}
+
+.secondary:hover {
+  background: var(--button-secondary-bg-hover);
+}
+
+.secondary:active {
+  background: var(--button-secondary-bg-active);
+}
+
+.icon {
+  flex-shrink: 0;
+}

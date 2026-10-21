@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background: var(--bg-tertiary);
+  color: var(--tp-primary);
+  white-space: nowrap;
+}
+
+.sm {
+  padding: 1.8px 10.8px;
+  border-radius: 7.2px;
+  font-size: 14.4px;
+  line-height: 21.6px;
+  letter-spacing: -0.036px;
+}
+
+.md {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.lg {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media (max-width: 767px) {
+  .md {
+    font-size: 16px;
+  }
+}

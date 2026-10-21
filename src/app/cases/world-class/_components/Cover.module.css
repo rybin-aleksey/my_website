@@ -1,0 +1,174 @@
+.cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 120px 40px 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--bg-secondary);
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1180px;
+  max-width: none;
+  height: 275px;
+  pointer-events: none;
+}
+
+.logo {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  overflow: hidden;
+  border-radius: 20.5px;
+  background: var(--brand-world-class);
+}
+
+.logo img {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  max-width: none;
+}
+
+.info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 358px;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+}
+
+.description {
+  color: var(--tp-secondary);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.video {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 16px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--border-default);
+  border-radius: 50%;
+  background: rgba(181, 193, 228, 0.08);
+  backdrop-filter: blur(3px);
+  transition: background-color 0.15s ease;
+}
+
+a.video:hover .play {
+  background: rgba(181, 193, 228, 0.16);
+}
+
+.visual {
+  position: relative;
+  align-self: center;
+  width: min(366px, 70%);
+  margin-top: 12px;
+  translate: -15% 0;
+}
+
+.app {
+  width: 100%;
+  height: auto;
+}
+
+/* Позиция карточки клуба относительно телефона — как в макете */
+.clubCard {
+  position: absolute;
+  top: 27.28%;
+  left: 57%;
+  width: 114.9%;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+
+@media (min-width: 1260px) {
+  .cover {
+    display: block;
+    height: 664px;
+    padding: 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 156px;
+    left: 72px;
+  }
+
+  .info {
+    position: absolute;
+    bottom: 232px;
+    left: 72px;
+    width: 358px;
+  }
+
+  .video {
+    position: absolute;
+    top: 516px;
+    left: 77px;
+  }
+
+  .visual {
+    position: absolute;
+    top: 76px;
+    left: 555px;
+    width: 366px;
+    margin: 0;
+    translate: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .cover {
+    gap: 24px;
+    padding: 96px 24px 0;
+    border-radius: var(--radius-md);
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.15px;
+  }
+
+  .description,
+  .video {
+    font-size: 16px;
+  }
+
+  .play {
+    width: 56px;
+    height: 56px;
+  }
+}

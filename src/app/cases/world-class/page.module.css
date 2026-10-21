@@ -1,0 +1,311 @@
+.header {
+  --header-actions-gap: 12px;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px 12px 16px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  color: var(--tp-secondary);
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.backLink:hover {
+  color: var(--tp-primary);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 8px var(--gutter) 88px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  padding: 64px 0 56px;
+}
+
+/* Оглавление: справа от колонки текста, на 1920 — за пределами контейнера */
+.tocSlot {
+  display: none;
+}
+
+@media (min-width: 1260px) {
+  .tocSlot {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 280px;
+  }
+}
+
+@media (min-width: 1880px) {
+  .tocSlot {
+    right: auto;
+    left: calc(100% + 34px);
+  }
+}
+
+.narrow {
+  width: 100%;
+  max-width: 580px;
+}
+
+.divider {
+  width: 100%;
+  max-width: 580px;
+  border: 0;
+  border-top: 1px solid var(--border-default);
+}
+
+.intro,
+.subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.wideSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.content section[id] {
+  scroll-margin-top: 24px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hypothesisGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cards24,
+.cards16 {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards24 {
+  gap: 24px;
+}
+
+.cards16 {
+  gap: 16px;
+}
+
+.content .gap8 {
+  gap: 8px;
+}
+
+.content .gap16 {
+  gap: 16px;
+}
+
+.content .gap20 {
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+}
+
+.h1 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.15px;
+}
+
+.h2 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.12px;
+}
+
+.body {
+  color: var(--tp-secondary);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.body p + p {
+  margin-top: 24px;
+}
+
+.body strong,
+.strong {
+  font-weight: 500;
+}
+
+.strong {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 40px 40px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statValue {
+  color: var(--icon-accent);
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+}
+
+.scrollable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.userFlow {
+  width: 100%;
+  min-width: 880px;
+  height: auto;
+}
+
+.scenario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 680px;
+}
+
+.scenarioImage {
+  width: 100%;
+  height: auto;
+}
+
+.finalScreens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.finalCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.finalImage {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .backLink {
+    padding: 8px;
+  }
+
+  .backLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .content {
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  .wideSection,
+  .intro,
+  .subsections {
+    gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.15px;
+  }
+
+  .h1 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.12px;
+  }
+
+  .h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .body,
+  .strong {
+    font-size: 16px;
+  }
+
+  .statCard {
+    padding: 24px;
+  }
+
+  .statValue {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .finalScreens {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

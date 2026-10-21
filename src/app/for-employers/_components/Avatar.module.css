@@ -1,0 +1,52 @@
+.withBackdrop {
+  position: relative;
+  flex-shrink: 0;
+  width: 219px;
+  height: 264px;
+}
+
+.backdrop {
+  position: absolute;
+  top: 12.8px;
+  left: 19.9px;
+  width: 180px;
+  height: 239px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-tertiary);
+  transform: rotate(10deg);
+}
+
+.card {
+  position: relative;
+  flex-shrink: 0;
+  width: 180px;
+  height: 239px;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--bg-secondary);
+}
+
+.withBackdrop .card {
+  position: absolute;
+  top: 13px;
+  left: 19px;
+}
+
+.photo {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: 216px;
+  height: 254px;
+  max-width: none;
+  object-fit: cover;
+  transform: translateX(-50%);
+}
+
+.glow {
+  position: absolute;
+  top: 112px;
+  left: -137px;
+  max-width: none;
+  pointer-events: none;
+}

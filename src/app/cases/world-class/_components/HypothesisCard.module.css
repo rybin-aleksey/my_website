@@ -1,0 +1,68 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px 28px 28px;
+  border-radius: var(--radius-lg);
+}
+
+.confirmed {
+  background: var(--success-alpha-100);
+}
+
+.rejected {
+  background: var(--error-alpha-100);
+}
+
+.status {
+  flex-shrink: 0;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.title {
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.confirmed .badge {
+  background: var(--success-alpha-200);
+  color: var(--tp-success);
+}
+
+.rejected .badge {
+  background: var(--error-alpha-200);
+  color: var(--tp-danger);
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: 20px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
