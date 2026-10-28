@@ -19,7 +19,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ru" className={inter.variable}>
+    // data-scroll-behavior: при переходе между страницами Next сбрасывает
+    // скролл мгновенно, а не плавно (smooth остаётся для якорей)
+    <html lang="ru" className={inter.variable} data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );

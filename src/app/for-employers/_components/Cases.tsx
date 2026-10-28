@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PAGE_FADE } from "@/components/PageTransition/PageTransition";
 import { Tag, TagList } from "@/components/Tag/Tag";
 import styles from "./Cases.module.css";
 
@@ -49,7 +50,11 @@ export function Cases() {
               </TagList>
             </div>
           </div>
-          <Link href="/cases/world-class" className={styles.link}>
+          <Link
+            href="/cases/world-class"
+            transitionTypes={[PAGE_FADE]}
+            className={styles.link}
+          >
             <span className={styles.linkLabel}>Смотреть кейс</span>
             <span className="visually-hidden"> World Class</span>
           </Link>

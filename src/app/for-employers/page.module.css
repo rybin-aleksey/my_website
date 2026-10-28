@@ -1,0 +1,45 @@
+/* Анимация первого экрана: шапка с hero уезжают вверх поверх контента,
+   а он стоит на месте и проявляется из затемнения. Пока первый экран уезжает
+   (прокрутка 0 → 100svh), контент сдвинут вверх ровно на непрокрученную
+   часть — то есть закреплён у верхнего края окна. Работает только там, где
+   первый экран занимает всю высоту окна (с 1360px, см. Hero.module.css). */
+@media (min-width: 1360px) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .rest {
+      position: relative;
+      animation: pin linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100svh;
+    }
+
+    /* Затемнение из макета; уходит с ускорением, чтобы в начале
+       прокрутки контент дольше оставался тёмным */
+    .rest::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: var(--neutral-alpha-900);
+      pointer-events: none;
+      animation: lighten cubic-bezier(0.5, 0, 0.9, 0.6) both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100svh;
+    }
+  }
+}
+
+@keyframes pin {
+  from {
+    translate: 0 -100svh;
+  }
+
+  to {
+    translate: none;
+  }
+}
+
+@keyframes lighten {
+  to {
+    opacity: 0;
+  }
+}

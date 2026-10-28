@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
+import { PAGE_FADE, PageTransition } from "@/components/PageTransition/PageTransition";
 import { StarList } from "@/components/StarList/StarList";
 import { Cover } from "./_components/Cover";
 import { HypothesisCard } from "./_components/HypothesisCard";
@@ -26,11 +27,15 @@ const TOC_ITEMS = [
 
 export default function WorldClassCasePage() {
   return (
-    <>
+    <PageTransition>
       <Header
         className={styles.header}
         start={
-          <Link href="/for-employers" className={styles.backLink}>
+          <Link
+            href="/for-employers"
+            transitionTypes={[PAGE_FADE]}
+            className={styles.backLink}
+          >
             <Image src="/icons/back.svg" alt="" width={24} height={24} />
             <span className={styles.backLabel}>На&nbsp;главную</span>
           </Link>
@@ -449,6 +454,6 @@ export default function WorldClassCasePage() {
       </main>
 
       <Footer />
-    </>
+    </PageTransition>
   );
 }
