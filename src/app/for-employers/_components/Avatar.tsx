@@ -5,9 +5,10 @@ type AvatarProps = {
   /** Повёрнутая подложка за фото (есть только в hero). */
   withBackdrop?: boolean;
   preload?: boolean;
+  className?: string;
 };
 
-export function Avatar({ withBackdrop = false, preload = false }: AvatarProps) {
+export function Avatar({ withBackdrop = false, preload = false, className }: AvatarProps) {
   const card = (
     <div className={styles.card}>
       <Image
@@ -32,7 +33,7 @@ export function Avatar({ withBackdrop = false, preload = false }: AvatarProps) {
   if (!withBackdrop) return card;
 
   return (
-    <div className={styles.withBackdrop}>
+    <div className={[styles.withBackdrop, className].filter(Boolean).join(" ")}>
       <div className={styles.backdrop} aria-hidden="true" />
       {card}
     </div>

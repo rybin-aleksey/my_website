@@ -1,0 +1,115 @@
+/* По горизонтали лента обрезается, по вертикали — нет: превью шота
+   выходит над лентой и перекрывает контент hero */
+.carousel {
+  position: relative;
+  z-index: 1;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+/* Стартовая позиция как в макете: пять карточек (5 × 407 + 4 × 12 = 2083px)
+   по центру экрана, на 1920 первая уходит за край на 81.5px */
+.track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  margin-left: min(0px, calc(50% - 1041.5px));
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 20px;
+  width: 407px;
+  padding: 28px 36px 28px 40px;
+  border: 1px solid var(--border-default);
+  border-radius: 430px;
+  will-change: transform;
+}
+
+.icon {
+  color: var(--icon-accent);
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.12px;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  color: var(--tp-primary);
+}
+
+.project {
+  color: var(--tp-secondary);
+}
+
+/* Превью шота: 573 × 430, по центру над карточкой, на 36px выше неё
+   (+1px — отсчёт идёт от внутреннего края рамки) */
+.preview {
+  position: absolute;
+  bottom: calc(100% + 37px);
+  left: 50%;
+  width: 573px;
+  max-width: none;
+  height: 430px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s linear 0.2s;
+}
+
+@media (hover: hover) {
+  .item:hover .preview {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+}
+
+/* Без анимации: обычная ручная прокрутка, копии не нужны */
+@media (prefers-reduced-motion: reduce) {
+  .carousel {
+    overflow-x: auto;
+    padding: 0 var(--gutter);
+    scrollbar-width: none;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .track {
+    margin: 0 auto;
+  }
+
+  .item {
+    will-change: auto;
+  }
+
+  .preview {
+    transform: translate(-50%, 0);
+    transition: none;
+  }
+
+  .copy {
+    display: none;
+  }
+}

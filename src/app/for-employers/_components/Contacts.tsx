@@ -9,13 +9,13 @@ export function Contacts() {
       <div className={styles.photo}>
         <Avatar />
         <p className={styles.caption}>
-          Буду рад обсудить вашу вакансию и рассказать о своём опыте.
+          Буду рад обсудить вашу вакансию и&nbsp;рассказать о&nbsp;своём опыте.
         </p>
       </div>
       <div className={styles.contacts}>
         <div className={styles.info}>
           <h2 id="contacts-title" className={styles.title}>
-            Ищете продуктового дизайнера в команду?
+            Ищете продуктового дизайнера в&nbsp;команду?
           </h2>
           <dl className={styles.channels}>
             <div className={styles.channel}>
@@ -36,7 +36,7 @@ export function Contacts() {
         </div>
         <div className={styles.actions}>
           <PillLink href={TELEGRAM_URL} withArrow external className={styles.action}>
-            Написать в Telegram
+            Написать в&nbsp;Telegram
           </PillLink>
           <PillLink href={RESUME_URL} variant="secondary" external className={styles.action}>
             Смотреть резюме

@@ -22,13 +22,24 @@
   background: var(--status-online);
 }
 
+/* Высота шапки на десктопе: статус 50px + отступы 2 × 20px */
 .hero {
+  --header-height: 90px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 0 96px;
+  background: var(--bg-secondary);
+}
+
+.intro {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  padding: 18px var(--gutter) 96px;
-  background: var(--bg-secondary);
+  width: 100%;
+  padding: 0 var(--gutter);
 }
 
 .text {
@@ -58,21 +69,111 @@
   justify-content: center;
 }
 
+/* Лента шотов есть только в десктопных макетах (1280–1920) */
+.shots {
+  display: none;
+  align-self: stretch;
+}
+
+/* Макет 1280 */
 @media (min-width: 1260px) {
+  .headerBg .header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   .hero {
-    padding-bottom: 118px;
+    padding-bottom: 44px;
+  }
+
+  .intro {
+    gap: 24px;
+  }
+
+  /* Текст 542px, подзаголовок 398px по центру */
+  .text {
+    max-width: 542px;
   }
 
   .subtitle {
-    padding: 0 72px;
+    max-width: 398px;
+  }
+
+  .shots {
+    display: block;
+    margin-top: 48px;
+  }
+}
+
+/* Макет 1440 (с 1360px — середина между 1280 и 1440, окно браузера
+   редко бывает ровно 1440): первый экран (шапка + hero) на всю высоту окна.
+   Лишняя высота делится поровну над контентом и под лентой. */
+@media (min-width: 1360px) {
+  .hero {
+    min-height: calc(100svh - var(--header-height));
+    padding-bottom: 28px;
+  }
+
+  .intro {
+    gap: 28px;
+    margin-top: auto;
+  }
+
+  /* Аватар 179 × 215.8 вместо 219 × 264 */
+  .avatar {
+    zoom: 0.8174;
+  }
+
+  .text {
+    gap: 12px;
+  }
+
+  /* В макете подзаголовок по центру блока высотой 52px */
+  .subtitle {
+    padding: 2px 0;
+  }
+
+  .shots {
+    margin-top: 44px;
+    margin-bottom: auto;
+  }
+}
+
+/* Макет 1920 (с 1680px — середина между 1440 и 1920) */
+@media (min-width: 1680px) {
+  .hero {
+    padding-bottom: 52px;
+  }
+
+  .intro {
+    gap: 32px;
+  }
+
+  .avatar {
+    zoom: 1;
+  }
+
+  .text {
+    gap: 16px;
+  }
+
+  .subtitle {
+    padding: 0;
+  }
+
+  .shots {
+    margin-top: 96px;
   }
 }
 
 @media (max-width: 767px) {
   .hero {
-    gap: 32px;
     padding-top: 16px;
     padding-bottom: 56px;
+  }
+
+  .intro {
+    gap: 32px;
   }
 
   .text {

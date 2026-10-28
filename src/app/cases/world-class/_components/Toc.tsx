@@ -5,6 +5,9 @@ import styles from "./Toc.module.css";
 
 type TocItem = { id: string; label: string };
 
+// Верхняя граница раздела должна пройти эту долю высоты экрана, чтобы он стал активным
+const ACTIVATION_LINE = 0.3;
+
 // Оглавление кейса: подсвечивает раздел, который сейчас на экране.
 export function Toc({ items }: { items: TocItem[] }) {
   const [activeId, setActiveId] = useState(items[0]?.id);
@@ -14,19 +17,31 @@ export function Toc({ items }: { items: TocItem[] }) {
       .map(({ id }) => document.getElementById(id))
       .filter((section): section is HTMLElement => section !== null);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting);
-        if (visible.length > 0) {
-          setActiveId(visible[0].target.id);
-        }
-      },
-      // Раздел считается активным, когда пересекает верхнюю треть экрана
-      { rootMargin: "-30% 0px -65% 0px" },
-    );
+    let frame = 0;
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    const update = () => {
+      frame = 0;
+      const line = window.innerHeight * ACTIVATION_LINE;
+      // Последний раздел, чей верх уже выше линии активации
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= line) current = section;
+      }
+      if (current) setActiveId(current.id);
+    };
+
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(frame);
+    };
   }, [items]);
 
   return (

@@ -92,6 +92,19 @@ ol {
   list-style: none;
 }
 
+/* Не оставлять одно слово на последней строке абзаца.
+   Висячие предлоги закрыты неразрывными пробелами (&nbsp; /  ) в текстах. */
+p,
+li,
+dd,
+dt,
+figcaption,
+h1,
+h2,
+h3 {
+  text-wrap: pretty;
+}
+
 :focus-visible {
   outline: 2px solid var(--icon-accent);
   outline-offset: 2px;
