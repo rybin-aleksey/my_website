@@ -3,13 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
-  // В макетах нет отдельной главной страницы: ссылки на версии сайта
-  // распространяются отдельно, а корень ведёт на страницу для нанимателей.
+  // Страница для нанимателей открывается на главной (группа (for-employers)),
+  // старые ссылки на /for-employers ведут туда же.
   redirects() {
     return [
       {
-        source: "/",
-        destination: "/for-employers",
+        source: "/for-employers",
+        destination: "/",
         permanent: false,
       },
     ];

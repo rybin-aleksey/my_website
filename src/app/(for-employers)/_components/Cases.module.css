@@ -115,10 +115,6 @@
   transition: background-color 0.15s ease;
 }
 
-.link:hover {
-  background: var(--button-primary-bg-hover);
-}
-
 .link:active {
   background: var(--button-primary-bg-active);
 }

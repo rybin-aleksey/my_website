@@ -42,10 +42,6 @@
   color: var(--button-primary-text);
 }
 
-.primary:hover {
-  background: var(--button-primary-bg-hover);
-}
-
 .primary:active {
   background: var(--button-primary-bg-active);
 }
@@ -53,10 +49,6 @@
 .secondary {
   background: var(--button-secondary-bg);
   color: var(--button-secondary-text);
-}
-
-.secondary:hover {
-  background: var(--button-secondary-bg-hover);
 }
 
 .secondary:active {
