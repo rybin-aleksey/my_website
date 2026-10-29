@@ -7,14 +7,14 @@ import styles from "./ShotsCarousel.module.css";
 
 // Картинки — кадры из секции шотов в Figma (910:5339), 4:3
 const SHOTS = [
-  { title: "Платформа обучения", project: "Neural UI", image: "/images/shots/platform.png" },
-  { title: "Аналитика обучения", project: "Neural UI", image: "/images/shots/analytics.png" },
+  { title: "Платформа обучения", project: "Neural UI", image: "/images/shots/platform.webp" },
+  { title: "Аналитика обучения", project: "Neural UI", image: "/images/shots/analytics.webp" },
   {
     title: "Персонализация платформы",
     project: "Neural UI",
-    image: "/images/shots/personalization.png",
+    image: "/images/shots/personalization.webp",
   },
-  { title: "Надёжность и безопасность", project: "Neural UI", image: "/images/shots/security.png" },
+  { title: "Надёжность и безопасность", project: "Neural UI", image: "/images/shots/security.webp" },
 ];
 
 // Три копии: одна пачка (4 × 419px) уже экрана 1920

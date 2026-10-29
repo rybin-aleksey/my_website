@@ -19,7 +19,7 @@ export function Cases() {
           className={styles.grid}
         />
         <Image
-          src="/images/cases/world-class/card-screens.png"
+          src="/images/cases/world-class/card-screens.webp"
           alt=""
           width={486}
           height={356}

@@ -1,19 +1,18 @@
 import type { NextConfig } from "next";
 
+// Статический экспорт для Timeweb Cloud App Platform: next build кладёт
+// готовый сайт в out/, сервер не нужен. Поэтому здесь нет cacheComponents
+// и partialPrefetching (несовместимы с экспортом) и серверных редиректов:
+// старый адрес /for-employers ведёт на главную через статическую страницу
+// (src/app/for-employers/page.tsx).
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
-  // Страница для нанимателей открывается на главной (группа (for-employers)),
-  // старые ссылки на /for-employers ведут туда же.
-  redirects() {
-    return [
-      {
-        source: "/for-employers",
-        destination: "/",
-        permanent: false,
-      },
-    ];
-  },
+  output: "export",
+  // Страницы лежат как /cases/world-class/index.html — так их отдаёт
+  // любой статический хостинг
+  trailingSlash: true,
+  // Оптимизатор картинок работает только на сервере: файлы (уже сжатые
+  // WebP) отдаются из public как есть
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

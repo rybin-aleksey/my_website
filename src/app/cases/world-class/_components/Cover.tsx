@@ -19,7 +19,7 @@ export function Cover() {
   return (
     <section className={styles.cover} aria-labelledby="case-title">
       <Image
-        src="/images/cases/world-class/cover-grid.png"
+        src="/images/cases/world-class/cover-grid.webp"
         alt=""
         width={1180}
         height={275}
@@ -59,7 +59,7 @@ export function Cover() {
       )}
       <div className={styles.visual}>
         <Image
-          src="/images/cases/world-class/cover-app.png"
+          src="/images/cases/world-class/cover-app.webp"
           alt="Главный экран нового приложения World Class"
           width={366}
           height={588}

@@ -12,7 +12,7 @@ export function Avatar({ withBackdrop = false, preload = false, className }: Ava
   const card = (
     <div className={styles.card}>
       <Image
-        src="/images/avatar.png"
+        src="/images/avatar.webp"
         alt="Алексей Рыбин"
         width={216}
         height={254}

@@ -278,7 +278,7 @@ export default function WorldClassCasePage() {
               aria-label="User flow: happy-path сценарий"
             >
               <Image
-                src="/images/cases/world-class/user-flow.png"
+                src="/images/cases/world-class/user-flow.webp"
                 alt="User flow happy-path сценария: от&nbsp;главного экрана до&nbsp;записи на&nbsp;тренировку и&nbsp;покупки карты"
                 width={1180}
                 height={560}
@@ -329,7 +329,7 @@ export default function WorldClassCasePage() {
                 </div>
               </div>
               <Image
-                src="/images/cases/world-class/ux-booking.png"
+                src="/images/cases/world-class/ux-booking.webp"
                 alt="Экраны сценария записи на&nbsp;тренировку"
                 width={680}
                 height={470}
@@ -353,7 +353,7 @@ export default function WorldClassCasePage() {
                 </div>
               </div>
               <Image
-                src="/images/cases/world-class/ux-trainer.png"
+                src="/images/cases/world-class/ux-trainer.webp"
                 alt="Экраны страницы тренера и&nbsp;отзывов"
                 width={680}
                 height={470}
@@ -391,7 +391,7 @@ export default function WorldClassCasePage() {
                 </div>
               </div>
               <Image
-                src="/images/cases/world-class/ux-club-cards.png"
+                src="/images/cases/world-class/ux-club-cards.webp"
                 alt="Экраны оформления клубной карты с&nbsp;дополнительными опциями"
                 width={680}
                 height={470}
@@ -422,7 +422,7 @@ export default function WorldClassCasePage() {
             <div className={styles.finalScreens}>
               <figure className={styles.finalCard}>
                 <Image
-                  src="/images/cases/world-class/final-home.png"
+                  src="/images/cases/world-class/final-home.webp"
                   alt="Финальный макет главного экрана"
                   width={580}
                   height={623}
@@ -435,7 +435,7 @@ export default function WorldClassCasePage() {
               </figure>
               <figure className={styles.finalCard}>
                 <Image
-                  src="/images/cases/world-class/final-trainer.png"
+                  src="/images/cases/world-class/final-trainer.webp"
                   alt="Финальный макет выбора тренера и&nbsp;карточки тренировки"
                   width={580}
                   height={623}
